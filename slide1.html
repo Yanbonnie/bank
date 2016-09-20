@@ -1,0 +1,121 @@
+<!DOCTYPE html >
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection" content="telephone=no" />		<!--忽略数字自动识别为电话号码-->
+		<meta name="format-detection" content="email=no" />		<!--忽略识别邮箱-->
+		<title></title>
+		<link href="css/common.css" rel="stylesheet" type="text/css">
+		<link href="css/base.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<script src="js/loading.js"></script>
+		<div class="main wrap hide">
+			<div class="index">
+				<div id="pageSlide1" class="tab pageSlide">
+					<ul class="content">
+						<li>
+							<div class="page1">
+								<div class="cont hidden" >
+									<img src="images/slide1_img.png" alt="" class="img1 bounce"/>
+									<div class="textBox scal">
+										<h1>完成对外转账</h1>
+										<h3>步骤一：</h3>
+										<p>点击“手机银行”里面的“储蓄业务”</p>
+									</div>
+								</div>
+							</div>			
+						</li>	
+						<li>
+							<div class="page2">
+								<div class="cont hidden">
+									<img src="images/slide1_img2.png" alt="" class="img1 bounceIn"/>
+									<div class="textBox fadeIn">
+										<h1>定活互转秘籍</h1>
+										<h4>步骤二：<span>登陆</span></h4>
+									</div>
+
+								</div>
+							</div>			
+						</li>
+						<li>
+							<div class="page3">
+								<div class="cont hidden">
+									<img src="images/slide1_img3.png" alt="" class="img1 fadeInLeft"/>
+									<div class="textBox fadeInUp">
+										<h1>定活互转秘籍</h1>
+										<h3>步骤三：</h3>
+										<p>选择“定活互转”点击进入</p>
+									</div>
+								</div>
+							</div>			
+						</li>	
+						<li>
+							<div class="page4">
+								<div class="cont hidden">
+									<img src="images/slide1_img4.png" alt="" class="img1 pulse"/>
+									<div class="textBox fadeInRight">
+										<h1>定活互转秘籍</h1>
+										<h3>步骤四：</h3>
+										<p>查看信息点击“转存”</p>
+									</div>
+
+								</div>
+							</div>			
+						</li>	
+						<li>
+							<div class="page5">
+								<div class="cont hidden ">
+									<img src="images/slide1_img5.png" alt="" class="img1 bounceIn"/>
+									<div class="textBox fadeInLeft pt27">
+										<h1>定活互转秘籍</h1>
+										<h3>步骤五：</h3>
+										<p>开户方式选择其中一项即可完成任务</p>
+									</div>
+									<div class="backBtn fadeInLeft" onclick="back();">返回</div>
+								</div>
+							</div>			
+						</li>
+					 </ul>
+					<i class="iconDown pt-page-moveIconUp"><img src="images/icon.png" alt="" /></i>
+					<img class="page1Yun slideYun fadeInUp" src="images/yun.png" alt=""/>
+
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/zepto.min.js"></script>
+<script src="js/package.js"></script>
+<script src="js/common.js"></script>
+<script type="text/javascript">
+	Package.util.landscape({color:'#0084ff'});
+	function back(){
+		window.location.href="index.html";
+	}
+	$(function(){
+		//上下滑动
+		window.tab1 = new mo.PageSlide({
+			target: $('#pageSlide1 .content li'),
+			effect: 'slide',
+			direction: 'y',
+			controller: false,
+			event:{
+				'change':function(){
+					//console.log(tab1.curPage);
+					var cur = tab1.curPage;
+					$('#pageSlide1 .content').children('li').eq(cur).find('div.cont').addClass('show').removeClass('hidden');
+					$('#pageSlide1 .content').children('li').eq(cur).siblings().find('div.cont').addClass('hidden').removeClass('show');
+					if(cur==4){
+						$('.iconDown').hide();
+					}else{
+						$('.iconDown').show();
+					}
+				}
+			}
+		});
+	})
+</script>

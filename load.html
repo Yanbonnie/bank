@@ -1,0 +1,41 @@
+<!DOCTYPE html >
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection" content="telephone=no" />		<!--忽略数字自动识别为电话号码-->
+		<meta name="format-detection" content="email=no" />		<!--忽略识别邮箱-->
+		<title></title>
+		<link href="css/common.css" rel="stylesheet" type="text/css">
+		<link href="css/base.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<script src="js/loading.js"></script>
+		<div class="main wrap loadCover hide">
+			<div class="loadBox">
+				<img class="img" src="images/redpacket2.png" alt=""/>
+				<div class="btnBox">
+					<span onclick="shareAndro()"><img src="images/andro.png" alt=""/></span>
+					<span><img src="images/phone.png" alt=""/></span>
+				</div>
+			</div>
+		</div>
+		<!--点击安卓下载图层-->
+		<div class="androCover wrapCover hide" data-state="true" onclick="shareAndro()">
+			<div class="androBox">
+				<img src="images/androshare.png" class="share_img" alt="">
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/zepto.min.js"></script>
+<script src="js/package.js"></script>
+<script src="js/common.js"></script>
+<script type="text/javascript">
+	Package.util.landscape({color:'#0084ff'});
+	function shareAndro(){
+		Package.util.popup('.androCover');
+	}
+</script>

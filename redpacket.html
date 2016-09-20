@@ -1,0 +1,147 @@
+<!DOCTYPE html >
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection" content="telephone=no" />		<!--忽略数字自动识别为电话号码-->
+		<meta name="format-detection" content="email=no" />		<!--忽略识别邮箱-->
+		<title></title>
+		<link href="css/common.css" rel="stylesheet" type="text/css">
+		<link href="css/base.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<script src="js/loading.js"></script>
+		<div class="main wrap hide">
+			<div class="redIndex">
+				<img src="images/fly.png" alt="" class="img1 fadeIn"/>
+				<div class="redBox">
+					<div class="gift bounceIn" id="open" onclick="openGift();">
+						<img src="images/gift_close.png" class="gift_close"  alt="" />
+					</div>
+					<div class="hand fadeInLeft"><img src="images/hand.png" class=" pulse2" alt="" /></div>
+					<div class="text_kuang fadeInUp">
+						<h1>恭喜你</h1>
+						<p>成功领到一个礼包，赶紧打开看看吧！</p>
+					</div>
+				</div>
+				
+				<img class="page1Yun" src="images/yun.png" alt=""/>
+			</div>
+			<div class="gainGift hide" data-state="true" id="iqiyi">
+				<div class="blank"></div>
+				<div class="quan fadeInUp"><img src="images/iqiyi.png" alt="" /></div>
+				<img class="gift_open bounceIn" src="images/gift_xie.png" alt="" />
+				<div class="text_kuang fadeInUp">
+						<h1>恭喜你</h1>
+						<p>获得爱奇艺会员！</p>
+						<input type="text" placeholder="输入领取手机号"/>
+				</div>
+				<span class="btn_next fadeInUp" onclick="iqiyifn()">下一步</span>
+			</div>
+			<div class="gainGift hide" data-state="true" id="xie" >
+				<div class="blank"></div>
+				<div class="quan fadeInUp"><img src="images/quan.png" alt="" /></div>
+				<img class="gift_open bounceIn" src="images/gift_xie.png" alt="" />
+				<div class="text_kuang fadeInUp">
+					<h1>恭喜你</h1>
+					<p>获得一张大闸蟹提货券！</p>
+					<input type="text" placeholder="输入领取手机号"/>
+				</div>
+				<span class="btn_next fadeInUp" onclick="xiefn()">下一步</span>
+			</div>
+		</div>
+		<!--大闸蟹提货弹框-->
+		<div class="goodsCover wrapCover xieCover hide" data-state="true">
+			<div class="goodsBox">
+				<div class="goodsArea">
+					<span class="right_icon"><img src="images/xie.png" alt=""></span>
+					<p>您的手机号码为13562358935，我行客服热线0571-96527将尽快与您联系，以最快的速度将提货券寄送至您。</p>
+				</div>
+				<div class="btnBox">
+					<span class="btn" onclick="closexieCover()">返回</span><span class="btn fr">确认提交</span>
+				</div>
+			</div>
+		</div>
+		<!--爱奇艺弹框-->
+		<div class="goodsCover wrapCover iqiyiCover hide" data-state="true">
+			<div class="goodsBox">
+				<div class="goodsArea">
+					<span class="right_icon"><img src="images/start.png" alt=""></span>
+					<p>您的手机号码为13562358935，我行将以短信形式发送至您手机，请注意短信查收。</p>
+				</div>
+				<div class="btnBox">
+					<span class="btn" onclick="closeiqiyiCover()">返回</span><span class="btn fr">确认提交</span>
+				</div>
+			</div>
+		</div>
+
+		<!--分享到朋友圈-->
+		<div class="shareCover wrapCover hide" data-state="true" onclick="shareArea()">
+			<div class="shareBox">
+				<img src="images/share.png" class="share_img" alt="">
+			</div>
+		</div>
+		<!--留言-->
+		<div class="shareTipCover wrapCover hide" data-state="true">
+			<div class="shareTip">
+				<div class="shareTipBox">
+					<p class="f12">我在稠州银行领了大闸蟹和爱奇艺会员大礼包，你也一起来吧！</p>
+					<div class="shareText fn-clear"><i><img src="images/smallniu.png" alt=""/></i><p>参与稠州电银体验<br/>赢惊喜大礼包</p></div>
+					<input type="text" placeholder="给朋友留言"/>
+				</div>
+				<div class="btnBox">
+					<span class="btn" onclick="shareArea()">取消</span><span class="btn fr">发送</span>
+				</div>
+			</div>
+			<img src="images/yun.png" class="page1Yun" alt=""/>
+		</div>
+	</body>
+</html>
+<script src="js/zepto.min.js"></script>
+<script src="js/package.js"></script>
+<script src="js/common.js"></script>
+<script type="text/javascript">
+	Package.util.landscape({color:'#0084ff'});
+	function gainMoney(obj) {
+		//console.log("aaa")
+		var stateRed = $(obj).attr("data-state");
+		if(stateRed == "true"){
+			Package.util.popup('.gainMoney');
+		}
+
+	}
+	function shareArea(){
+		Package.util.popup('.shareCover');
+	}
+	function  openGift() {
+		var num = random(0,1);
+		//console.log(num)
+		switch(num){
+			case 0:
+				Package.util.popup('#iqiyi');
+				break;
+			case 1:
+				Package.util.popup('#xie');
+				break;
+		}
+	}
+	/*随机函数*/
+	function random(start,end){
+		var total = end - start +1
+		return Math.floor(Math.random()*total + start);
+	}
+	function iqiyifn(){
+		Package.util.popup('.iqiyiCover');
+	}
+	function xiefn(){
+		Package.util.popup('.xieCover');
+	}
+	function closeiqiyiCover() {
+		Package.util.popup('.iqiyiCover');
+	}
+	function closexieCover() {
+		Package.util.popup('.xieCover');
+	}
+</script>

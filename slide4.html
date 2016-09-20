@@ -1,0 +1,94 @@
+<!DOCTYPE html >
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection" content="telephone=no" />		<!--忽略数字自动识别为电话号码-->
+		<meta name="format-detection" content="email=no" />		<!--忽略识别邮箱-->
+		<title></title>
+		<link href="css/common.css" rel="stylesheet" type="text/css">
+		<link href="css/base.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<script src="js/loading.js"></script>
+		<div class="main wrap hide">
+			<div class="index">
+				<div id="pageSlide3" class="tab pageSlide">
+					<ul class="content">
+						<li>
+							<div class="page1">
+								<div class="cont hidden" >
+									<img src="images/slide4_img1.png" alt="" class="img1 bounce"/>
+									<div class="textBox scal">
+										<h1 class="h1">账户查询秘籍</h1>
+										<h3>步骤一：</h3>
+										<p>点击“手机银行”里面的“账户管理”</p>
+									</div>
+								</div>
+							</div>			
+						</li>	
+						<li>
+							<div class="page2">
+								<div class="cont hidden">
+									<img src="images/slide4_img2.png" alt="" class="img1 bounceIn"/>
+									<div class="textBox fadeIn">
+										<h1 class="h1">账户查询秘籍</h1>
+										<h4>步骤二：<span>登录</span></h4>
+									</div>
+								</div>
+							</div>			
+						</li>
+						<li>
+							<div class="page3">
+								<div class="cont hidden">
+									<img src="images/slide4_img3.png" alt="" class="img1 fadeInLeft"/>
+									<div class="textBox fadeInUp pt27">
+										<h1 class="h1">账户查询秘籍</h1>
+										<h4>步骤三：<span>查询余额一目了然</span></h4>
+									</div>
+									<div class="backBtn fadeInLeft" onclick="back();">返回</div>
+									<i class="icon pt-page-moveIconUp"><img src="images/icon.png" alt="" /></i>
+								</div>
+							</div>			
+						</li>
+					 </ul>
+					<i class="iconDown pt-page-moveIconUp"><img src="images/icon.png" alt="" /></i>
+					<img class="page1Yun" src="images/yun.png" alt=""/>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/zepto.min.js"></script>
+<script src="js/package.js"></script>
+<script src="js/common.js"></script>
+<script type="text/javascript">
+	Package.util.landscape({color:'#0084ff'});
+	function back(){
+		window.location.href="index.html";
+	}
+	$(function(){
+		//上下滑动
+		window.tab1 = new mo.PageSlide({
+			target: $('#pageSlide3 .content li'),
+			effect: 'slide',
+			direction: 'y',
+			controller: false,
+			event:{
+				'change':function(){
+					//console.log(tab1.curPage);
+					var cur = tab1.curPage;
+					$('#pageSlide3 .content').children('li').eq(cur).find('div.cont').addClass('show').removeClass('hidden');
+					$('#pageSlide3 .content').children('li').eq(cur).siblings().find('div.cont').addClass('hidden').removeClass('show');
+					if(cur==2){
+						$('.iconDown').hide();
+					}else{
+						$('.iconDown').show();
+					}
+				}
+			}
+		});
+	})
+</script>

@@ -1,0 +1,276 @@
+<!DOCTYPE html >
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection" content="telephone=no" />		<!--忽略数字自动识别为电话号码-->
+		<meta name="format-detection" content="email=no" />		<!--忽略识别邮箱-->
+		<title></title>
+		<link href="css/common.css" rel="stylesheet" type="text/css">
+		<link href="css/base.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<script src="js/loading.js"></script>
+		<div class="main  wrap">
+			<div class="index">
+				<div id="slide01" class="tab">					 
+					<ul class="content">
+						<li>
+						<div class="page1">
+							<div class="cont hidden" >
+								<img class="page1Title bounce" src="images/index_title.png" alt=""/>
+								<img class="page1Circle bounceIn" src="images/index_gift.png" alt=""/>
+								<img class="fly zoomIn" src="images/fly_01.png" alt=""/>
+								<img class="page1Yun fadeInUp" src="images/yun.png" alt=""/>
+								<i class="icon pt-page-moveIconUp"><img src="images/icon.png" alt="" /></i>
+							</div>
+						</div>
+					</li>
+						<li>
+							<div class="page2">
+								<div class="cont hidden">
+									<img src="images/page2_gift.png" class="page2Hand bounceIn" alt=""/>
+									<span class="shareIcon" onclick="shareArea()"><img src="images/shareicon.png" alt=""/></span>
+									<img src="images/start.png" class="start_img fadeInLeft" alt="" />
+									<img src="images/xie.png" class="xie_img fadeInRight" alt="" />
+									<div class="rule">
+										<p class="text1 fadeInUp"><span>活动时间</span>2016年7月1日-2016年10月31日</p>
+										<p class="text2 fadeInUp"><span>活动对象</span>稠州银行新老手机银行签约(含自助注册)客户</p>
+										<p class="text3 fadeInUp"><span>活动说明</span>在活动期间，您可在此领取体验任务，任务完成后返回此页面领取惊喜礼包，礼包有限，先到先得！</p>
+									</div>
+									<div class="btnBox fadeInLeft">
+										<span class="btn btnReceive" id="receive" onclick="taskShow(this)" data-state="false">领任务</span>
+										<span class="btn btnOpen" onclick="openRed()">拿礼包</span>
+									</div>
+									<img class="page1Yun fadeInUp" src="images/yun.png" alt=""/>
+
+								</div>
+							</div>			
+						</li>
+
+					 </ul>
+				</div>
+			</div>
+		</div>
+
+		<!-- 任务一 -->
+		<div class="taskOne taskCover hide" data-state="true" data-task="1">
+			<div class="taskBox">
+				<img class="img scal" src="images/slide1img.png" alt=""/>
+				<div class="taskArea">
+					<div class="textBox fadeInUp">
+						<h1>完成对外转账</h1>
+						<p>打开稠行手机银行-点击手机银行-汇款转账-点击对外转账完成一笔即可完成任务；</p>
+					</div>
+					<div class="btnBox fn-clear fadeInUp">
+						<span class="btn2">马上去做任务</span><span class="btn2" data-look="1" onclick="lookShow(this)">查看任务秘笈</span><span class="btn2 load" onclick="loadfn()">下载手机银行客户端</span>
+					</div>
+					<div class="changeBox fadeInUp">
+						<h3>我想换一个任务试试</h3>
+						<img src="images/line.png" alt=""/>
+						<p>（一天只能换一次哦）</p>
+					</div>
+				</div>
+				<img class="page1Yun" src="images/yun.png" alt=""/>
+			</div>
+
+		</div>
+
+		<!-- 任务二 -->
+		<div class="taskSecond taskCover hide" data-state="true"  data-task="2">
+			<div class="taskBox">
+				<img class="img scal" src="images/slide2img.png" alt=""/>
+				<div class="taskArea">
+					<div class="textBox fadeInLeft">
+						<h1>做一笔账户查询</h1>
+						<p>打开手机银行-点击手机银行-打开账户管理即可完成任务；</p>
+					</div>
+					<div class="btnBox fadeInLeft fn-clear">
+						<span class="btn2">马上去做任务</span><span class="btn2" data-look="2" onclick="lookShow(this)">查看任务秘笈</span><span class="btn2 load" onclick="loadfn()">下载手机银行客户端</span>
+					</div>
+					<div class="changeBox fadeInLeft">
+						<h3>我想换一个任务试试</h3>
+						<img src="images/line.png" alt=""/>
+						<p>（一天只能换一次哦）</p>
+					</div>
+				</div>
+				<img class="page1Yun" src="images/yun.png" alt=""/>
+			</div>
+		</div>
+		<!-- 任务三 -->
+		<div class="taskThree taskCover hide" data-state="true"  data-task="3">
+			<div class="taskBox">
+				<img class="img bounceIn" src="images/slide3img.png" alt=""/>
+				<div class="taskArea">
+					<div class="textBox fadeInRight">
+						<h1>做一笔定活互转转入</h1>
+						<p>打开稠行手机银行-点击手机银行-点击储蓄业务-点击定活互转即可完成任务；</p>
+					</div>
+					<div class="btnBox fadeInRight fn-clear">
+						<span class="btn2">马上去做任务</span><span class="btn2" data-look="3" onclick="lookShow(this)">查看任务秘笈</span><span class="btn2 load" onclick="loadfn()">下载手机银行客户端</span>
+					</div>
+					<div class="changeBox fadeInRight">
+						<h3>我想换一个任务试试</h3>
+						<img src="images/line.png" alt=""/>
+						<p>（一天只能换一次哦）</p>
+					</div>
+				</div>
+				<img class="page1Yun" src="images/yun.png" alt=""/>
+			</div>
+
+		</div>
+		<!-- 任务四 -->
+		<div class="taskFour taskCover hide" data-state="true"  data-task="4">
+			<div class="taskBox">
+				<img class="img bounceIn" src="images/slide4img.png" alt=""/>
+				<div class="taskArea">
+					<div class="textBox fadeIn">
+						<h1>完成一笔如意天添利签约</h1>
+						<p>打开稠行手机银行-点击手机银行-理财超市-开放式理财-签约如意天添利即可完成任务。</p>
+					</div>
+					<div class="btnBox fadeIn fn-clear">
+						<span class="btn2">马上去做任务</span><span class="btn2" data-look="4" onclick="lookShow(this)">查看任务秘笈</span><span class="btn2 load" onclick="loadfn()">下载手机银行客户端</span>
+					</div>
+					<div class="changeBox fadeIn">
+						<h3>我想换一个任务试试</h3>
+						<img src="images/line.png" alt=""/>
+						<p>（一天只能换一次哦）</p>
+					</div>
+				</div>
+				<img class="page1Yun" src="images/yun.png" alt=""/>
+			</div>
+
+		</div>
+
+		<!--成功完成任务-->
+		<div class="successCover wrapCover hide" data-state="true">
+			<div class="successBox">
+				<div class="success">
+					<p>亲，你已经成功<br/>完成任务，可以<br/>直接抽礼包哦~</p>
+				</div>
+				<div class="btnBox">
+					<span class="btn">知道啦</span><span class="btn fr">拿礼包咯</span>
+				</div>
+			</div>
+
+		</div>
+		<!--来晚咯-->
+		<div class="delayCover wrapCover hide" data-state="true">
+			<div class="delayBox">
+				<img class="niu" src="images/niu.png" alt=""/>
+				<div class="textBox">
+					<p>很抱歉，您没有中奖，敬请关注<br/>我行其他类型活动，谢谢！</p>
+				</div>
+			</div>
+		</div>
+		<!--客户端下载-->
+		<!--<div class="loadCover wrapCover " data-state="true">-->
+			<!--<div class="loadBox">-->
+				<!--<img class="img" src="images/redpacket2.png" alt=""/>-->
+				<!--<div class="btnBox">-->
+					<!--<span onclick="shareAndro()"><img src="images/andro.png" alt=""/></span>-->
+					<!--<span><img src="images/phone.png" alt=""/></span>-->
+				<!--</div>-->
+			<!--</div>-->
+		<!--</div>-->
+
+		<!--分享到朋友圈-->
+		<div class="shareCover wrapCover hide" data-state="true" onclick="shareArea()">
+			<div class="shareBox"> 
+				<img src="images/share.png" class="share_img" alt="">
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/zepto.min.js"></script>
+<script src="js/package.js"></script>
+<script src="js/common.js"></script>
+<script type="text/javascript">
+	Package.util.landscape({color:'#0084ff'});
+	//随机1到四的整数
+	function radomShow(){
+		var radomNum = Math.floor(Math.random() * 4 + 1);
+		$('#receive').attr("data-task",radomNum);
+	}
+	radomShow();
+	function taskShow(obj){
+		var dataTask;
+		var dataState = $(obj).attr("data-state");   //true已领取了任务  false未领取任务
+		if(dataState == "true"){
+			dataTask = 1;  							 //此处是变量 存储已经领取任务的参数。1为已经领取的第一个任务，以此类推
+			console.log("已经领取过了。")
+		}else{
+			dataTask =  $(obj).attr("data-task");
+		}
+		if(dataTask == 1){
+			Package.util.popup('.taskOne');
+		}
+		if(dataTask == 2){
+			Package.util.popup('.taskSecond');
+		}
+		if(dataTask == 3){
+			Package.util.popup('.taskThree');
+		}
+		if(dataTask == 4){
+			Package.util.popup('.taskFour');
+		}
+	}
+	function lookShow(obj){
+		var lookNum = $(obj).attr("data-look");
+		if(lookNum == 1){
+			window.location.href = "slide1.html";
+		}
+		if(lookNum == 2){
+			window.location.href = "slide2.html";
+		}
+		if(lookNum == 3){
+			window.location.href = "slide3.html";
+		}
+		if(lookNum == 4){
+			window.location.href = "slide4.html";
+		}
+	}
+	function loadfn(){
+		window.location.href="load.html"
+	}
+	function shareArea(){
+		Package.util.popup('.shareCover');
+	}
+	function shareAndro(){
+		Package.util.popup('.androCover');
+	}
+	function openRed(){
+		window.location.href = "redpacket.html";
+	}
+	$(function(){
+		var num = 0;   //当参数为1的时候跳过动画，否则播放动画
+		var h = $(window).height();
+		if(num == 1){
+			$("#slide01 .content").css("transform","translateY(-"+h+"px)");
+			$("#slide01 .page2 .cont").removeClass("hidden");
+		}else{
+			//上下滑动
+			window.tab1 = new mo.PageSlide({
+				target: $('#slide01 .content li'),
+				effect: 'slide',
+				direction: 'y',
+				controller: false,
+				event:{
+					'change':function(){
+						//console.log(tab1.curPage);
+						var cur = tab1.curPage;
+						$('#slide01 .content').children('li').eq(cur).find('div.cont').addClass('show').removeClass('hidden');
+						$('#slide01 .content').children('li').eq(cur).siblings().find('div.cont').addClass('hidden').removeClass('show');
+						if(cur==5){
+							console.log("xixi")
+						}
+					}
+				}
+			});
+		}
+
+
+	})
+</script>
